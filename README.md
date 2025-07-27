@@ -1,16 +1,4 @@
 # task_photo
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="617" height="1001" alt="image" src="https://github.com/user-attachments/assets/d507fd2d-a53e-4d1d-9442-1bf8f84882eb" />
+<img width="559" height="1034" alt="image" src="https://github.com/user-attachments/assets/9fc75200-d43c-4f3f-8c15-735d7f82a486" />
