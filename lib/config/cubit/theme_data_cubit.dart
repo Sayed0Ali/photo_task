@@ -8,28 +8,45 @@ part 'theme_data_state.dart';
 class ThemeDataCubit extends Cubit<ThemeDataState> {
   static const String _key = 'theme_mode';
 
-  ThemeDataCubit() : super(ThemeDataInitial());
-  void _loadTheme() async {
+  ThemeDataCubit() : super(ThemeDataInitial()){
+    loadTheme();
+  }
+
+  void loadTheme() async {
     final prefs = await SharedPreferences.getInstance();
     final mode = prefs.getString(_key);
 
     if (mode == 'light') {
-      emit(ThemeMode.light);
+      emit(ThemeChangeLight());
     } else if (mode == 'dark') {
-      emit(ThemeMode.dark);
+      emit(ThemeChangeDark());
     } else {
-      emit(ThemeMode.system);
+      emit(ThemeChangeSuccess());
     }
   }
 
   void toggleTheme() async {
     final prefs = await SharedPreferences.getInstance();
-    if (state == ThemeMode.light) {
+    final mode = prefs.getString(_key);
+
+    if (mode == 'light') {
       await prefs.setString(_key, 'dark');
-      emit(ThemeMode.dark);
-    } else {
+      emit(ThemeChangeDark());
+    } else if (mode == 'dark') {
       await prefs.setString(_key, 'light');
-      emit(ThemeMode.light);
+      emit(ThemeChangeLight());
+    } else {
+      emit(ThemeChangeSuccess());
     }
   }
+
+  //   final prefs = await SharedPreferences.getInstance();
+  //   if (state == ThemeChangeLight) {
+  //     await prefs.setString(_key, 'dark');
+  //     emit(ThemeChangeDark());
+  //   } else {
+  //     await prefs.setString(_key, 'light');
+  //     emit(ThemeChangeLight());
+  //   }
+  // }
 }

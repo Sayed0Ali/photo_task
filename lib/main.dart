@@ -29,13 +29,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeDataCubit, ThemeDataState>(
-
       builder: (context, state) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
-          themeMode: ,
+          themeMode:
+              (state is ThemeChangeLight) ? ThemeMode.light : ThemeMode.dark,
           initialRoute: HomeScreen.routeName,
           routes: {HomeScreen.routeName: (context) => HomeScreen()},
         );
